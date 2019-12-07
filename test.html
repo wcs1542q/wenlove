@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="abstract" charset="utf-8"/>
+		<title>love</title>
+		<style type="text/css">
+			
+			.music{
+				position: absolute;
+				right: 5.20px;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+			}
+			.anim{
+				-webkit-animation: music 5s infinite linear;
+			}
+			.video{
+				width: 700px;
+				height: 500px;
+				display: none;
+				position: absolute;
+				top: -45px;
+				left: 48.5%;
+				z-index: -1;
+				outline: none;
+			}
+			
+			 
+			 .img{
+			 	width: 520px;
+			 	height: 520px;
+			 	-webkit-animation: myfirst 0.52s normal infinite;
+				 float: left;
+				 z-index: -1;
+			 }
+			
+			@-webkit-keyframes myfirst{
+				           	0% {
+	transform:rotate(45deg) scale(0.8,0.8);
+	opacity:1;
+}
+25% {
+	transform:rotate(45deg) scale(1,1);
+	opacity:0.8;
+}
+100% {
+	transform:rotate(45deg) scale(0.8,0.8);
+	opacity:1;
+}
+			}
+			@-webkit-keyframes music{
+           100% {transform: rotateZ(360deg)}
+        
+}
+		</style>
+ </head>
+	<body>
+		<img class="music" src="../maohan/img/style.jpg" alt="给你的爱">
+		<video class="video" autoplay="autoplay" controls="controls">
+			<source src="img/告白气球.mp4" type="video/mp4">
+		</video>
+		<img class="img" src="img/3D.jpg"/>
+		<canvas id="christmasCanvas" style="top: 0px; left: 0px; z-index: 5000; position: fixed; pointer-events: none;" ></canvas>
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+ <script>
+ 	var snow = function() {
+	var b = document.getElementById("christmasCanvas"),
+		a = b.getContext("2d"),
+		d = window.innerWidth,
+		c = window.innerHeight;
+	b.width = d;
+	b.height = c;
+	for(var e = [], b = 0; b < 70; b++) {
+		e.push({
+			x: Math.random() * d,
+			y: Math.random() * c,
+			r: Math.random() * 4 + 1,
+			d: Math.random() * 70
+		})
+	}
+	var h = 0;
+	window.intervral4Christmas = setInterval(function() {
+		a.clearRect(0, 0, d, c);
+		a.fillStyle = "rgba(255, 0, 0.6)";
+		a.shadowBlur = 5;
+		a.shadowColor = "rgba(255, 0, 0.9)";
+		a.beginPath();
+		for(var b = 0; b < 70; b++) {
+			var f = e[b];
+			a.moveTo(f.x, f.y);
+			a.arc(f.x, f.y, f.r, 0, Math.PI * 2, !0)
+		}
+		a.fill();
+		h += 0.01;
+		for(b = 0; b < 70; b++) {
+			if(f = e[b], f.y += Math.cos(h + f.d) + 1 + f.r / 2, f.x += Math.sin(h) * 2, f.x > d + 5 || f.x < -5 || f.y > c) {
+				e[b] = b % 3 > 0 ? {
+					x: Math.random() * d,
+					y: -10,
+					r: f.r,
+					d: f.d
+				} : Math.sin(h) > 0 ? {
+					x: -5,
+					y: Math.random() * c,
+					r: f.r,
+					d: f.d
+				} : {
+					x: d + 5,
+					y: Math.random() * c,
+					r: f.r,
+					d: f.d
+				}
+			}
+		}
+	}, 70)
+}
+snow();
+
+$("document").ready(()=>{
+		$(".music").addClass("anim");
+});
+$(".music").dblclick(()=>{
+	$(".music").removeClass("anim");
+})
+$(".music").click(()=>{
+	$(".music").addClass("anim")
+})
+$(".img").mouseover(()=>{
+$(".video").css("display","block")
+})
+$(".img").click(()=>{
+	
+})
+ </script> 
+</html>

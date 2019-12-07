@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>css3新特性练习</title>
+		<style type="text/css">
+			/*
+			 边框样式：
+			 border-radius
+              box-shadow
+              border-image
+          */
+			
+			.view {
+				width: 400px;
+				height: 50vh;
+				text-align: center;
+				line-height: 50vh;
+				border-radius: 3rem;
+				box-shadow: 10px 10px 5px blueviolet;
+				/*-webkit-border-image: url("../bootstrap/img/style.jpg") 30 30 round;*/
+				/*
+				  背景属性：
+				  background-image
+                  background-size
+                  background-Origin属性指定了背景图像的位置区域
+                  background-clip背景剪裁属性是从指定位置开始绘制。
+                  */
+                 /*background-image: url("../bootstrap/img/style.jpg");*/
+                 background-size:100% 100%;
+                 background-repeat:no-repeat;
+                 background-origin: padding-box;
+                 background-clip: border-box;
+                 font-size: 30px;
+                 text-shadow:5px 5px 5px #FF4500;
+                box-shadow: 15px 15px #8A2BE2;
+                text-overflow: clip;
+                 /*
+                  	文字效果：
+                  	text-shadow属性适用于文本阴影。
+                  	 box-shadow属性适用于盒子阴影
+                  	text-overflow: clip; 文本溢出属性指定应向用户如何显示溢出内容
+                  	word-wrap
+                    word-break
+                  * 
+                  * */
+   
+                 /*
+                  	渐变：
+                  * 
+                  * 线性渐变：linear-gradient(direction, color-stop1, color-stop2, ...);
+                  * 对角线线性渐变：background-image: linear-gradient(to top right ,red ,green);
+                  * 线性角度渐变：background-image: linear-gradient(-90deg, red, yellow);
+                  * 重复渐变：background-image: repeating-linear-gradient(red,yellow,green);
+
+                  * 
+                  * 径向渐变：radial-gradient
+                  * (shape size at position, start-color, ..., last-color);
+                  * background-image:radial-gradient(circle,red,yellow,blue);
+                  * 
+                  * 
+                  * */
+                 background-image:repeating-radial-gradient(circle,red,yellow,blue);
+			    /*
+			     2D、3D转换：
+			     
+			     * translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，
+			     *    从当前元素位置移动。
+                   rotate()方法，在一个给定度数顺时针旋转的元素。
+                      负值是允许的，这样是元素逆时针旋转。
+                   scale()方法，该元素增加或减少的大小，
+                      取决于宽度（X轴）和高度（Y轴）的参数：
+                   skew():分别表示X轴和Y轴倾斜的角度，
+                      如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜。
+                   matrix()方法和2D变换方法合并成一个。
+                   matrix 方法有六个参数，
+                      包含旋转，缩放，移动（平移）和倾斜功能。
+                      
+                3D:
+                    rotateX()
+                    rotateY()
+			     * 
+			     * 
+			     * 
+			     * */
+			 transform:translate(50px,50px)  rotate(30deg) scale(0.8,0.8);
+             /*transform: rotateX(200deg) rotateY(200deg);*/		
+             
+             /*
+              过渡：
+              
+              * 
+              * 
+              * 
+              * 
+              * 
+              * */
+             
+              transition: width 5s, height 2s, transform 2s;
+             
+             
+             
+             	
+			}
+			div:hover{
+				height: 500px;
+				width: 800px;
+			}
+			
+			.view-all{
+				width: 200px;
+				height: 200px;
+				 -webkit-animation: myfirst 5s; /* Safari 与 Chrome */
+			}
+			@-webkit-keyframes myfirst /* Safari 与 Chrome */
+{
+    from {background: red; top: 0px;}
+    to {background: yellow; top: 200px;}
+}
+
+		.view-first{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="view">
+			毛寒小屋:我还是很喜欢你像风走了八千里不问归期；我还是很喜欢你
+			         像鲸沉于海底，温柔呼吸，痴极嗔极
+		</div>
+		<div class="view-all"></div>
+			<img class="view-first" src="../bootstrap/img/style.jpg"/>
+	</body>
+
+</html>

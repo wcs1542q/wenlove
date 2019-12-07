@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery动画练习</title>
+		<style type="text/css">
+			#view{
+				width: 100px;
+				height: 100px;
+				background-color: orangered;
+				border-radius: 30px;
+				text-align: center;
+				line-height: 5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!--显示隐藏-->
+		<button id="hide">hide</button>
+		<button id="show">show</button>
+		<button id="toggle">toggle</button>
+		<!--淡入淡出-->
+		<button id="fadein">fadein</button>
+		<button id="fadeout">fadeout</button>
+		<button id="fadetoggle">fadetoggle</button>
+		<button id="fadeTo">fadeTo</button>
+		<!--滑动-->
+		<button id="slideDown">slideDown</button>
+		<button id="slideUp">slideUp</button>
+		<button id="slideToggle">slideToggle</button>
+		<!--自定义动画-->
+		<button id="animate">animate</button>
+		<div id="view">
+			#毛寒小屋#
+		</div>
+		<canvas id="myCanvas" style="width: 300px;height: 300px;"></canvas>
+	</body>
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript">
+	
+	
+	var c=document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+	ctx.fillStyle="royalblue";
+	ctx.fillRect(0,0,00,200)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		var view=$("#view");
+		//jQuery动画
+		//显示和隐藏
+		$("#hide").click(function(){
+			view.hide();
+		});
+		$("#show").click(function(){
+			view.show();
+		});
+		//toggle切换显示隐藏状态
+		$("#toggle").click(function(){
+			view.toggle();
+		});
+		
+		/*淡入淡出属性
+		fadeIn(speed,callback);
+		fadeOut(speed,callback);
+		fadeToggle(speed,callback);
+		fadeTo(speed,opacity,callback);
+		
+		 speed 参数规定效果的时长。它可以取以下值：
+		 "slow"、"fast" 或毫秒;
+		 
+
+      opacity 参数将淡入淡出效果设置为给定的不透明度
+      （值介于 0 与 1 之间）;
+
+      callback 参数是该函数完成后所执行的函数名称。
+		* */
+		
+		$("#fadein").click(function(){
+			view.fadeIn("slow");
+		});
+		$("#fadeout").click(function(){
+			view.fadeOut("fast");
+		})
+		$("#fadetoggle").click(function(){
+			view.fadeToggle(3000);
+		})
+		$("#fadeTo").click(function(){
+			view.fadeTo("slow",0.3)
+		})
+		
+		//滑动动画
+		/*
+		 slideDown(speed,callback);
+         slideUp(speed,callback);
+         slideToggle(speed,callback);
+		 */
+		$("#slideDown").click(function(){
+			view.slideDown("slow");
+		})
+		$("#slideUp").click(function(){
+			view.slideUp("fast");
+		})
+		$("#slideToggle").click(function(){
+			view.slideToggle();
+		})
+		
+		//自定义动画
+		//animate({params},speed,callback);
+		//必需的 params 参数定义形成动画的 CSS 属性。
+		$("#animate").click(function(){
+			
+			view.animate({height:'300px',opacity:'0.4'},"slow");
+			view.animate({height:'300px',opacity:'0.8'},"slow");
+			view.animate({height:'100px',opacity:'0.4'},"slow");
+			view.animate({height:'100px',opacity:'0.8'},"slow");
+		})
+		
+		//停止动画stop(stopAll,goToEnd);
+		/*
+		 
+         stopAll 参数规定是否应该清除动画队列。默认是 false，
+         即仅停止活动的动画，允许任何排入队列的动画向后执行。
+
+          goToEnd 参数规定是否立即完成当前动画。默认是 false。
+		 
+		 */
+		
+	</script>
+</html>
